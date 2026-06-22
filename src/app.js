@@ -125,6 +125,25 @@ function genCode() {
   return s;
 }
 
+// Klikbare farve-cirkler (selects viser ikke farver på macOS).
+function colorSwatchesHtml(selected) {
+  const sel = selected || MEMBER_COLORS[0];
+  return `<div class="color-swatches">${MEMBER_COLORS.map((c) =>
+    `<button type="button" class="swatch${c === sel ? " on" : ""}" data-color="${c}" style="background:${c}" aria-label="farve"></button>`).join("")}</div>`;
+}
+function wireSwatches() {
+  const root = document.getElementById("modal-body");
+  if (!root) return;
+  root.querySelectorAll(".swatch").forEach((b) => b.addEventListener("click", () => {
+    root.querySelectorAll(".swatch").forEach((x) => x.classList.remove("on"));
+    b.classList.add("on");
+  }));
+}
+function selectedColor() {
+  const root = document.getElementById("modal-body");
+  return root?.querySelector(".swatch.on")?.dataset.color || MEMBER_COLORS[0];
+}
+
 // Login er PÅKRÆVET når en backend er sat op (offentlig udgave). På localhost
 // kører appen frit, så vi nemt kan arbejde videre uden at logge ind hver gang.
 function requireAuth() {
@@ -237,9 +256,10 @@ function openWelcome() {
     <label>Dit navn</label>
     <input id="wel-name" type="text" value="${state.profile?.display_name || ""}" />
     <label>Din farve</label>
-    <select id="wel-color" class="color-select">${MEMBER_COLORS.map((c) => `<option value="${c}" ${c === state.profile?.color ? "selected" : ""} style="color:${c}">●●●</option>`).join("")}</select>`,
-    async () => { await updateMyProfile(($("#wel-name").value || "").trim() || state.profile.display_name, $("#wel-color").value); },
+    ${colorSwatchesHtml(state.profile?.color)}`,
+    async () => { await updateMyProfile(($("#wel-name").value || "").trim() || state.profile.display_name, selectedColor()); },
     "Kom i gang", false, "Spring over");
+  wireSwatches();
 }
 
 async function bootstrapFamily() {
@@ -439,15 +459,14 @@ function renderFamilyPanel() {
     <div class="joincode" id="joincode" title="Klik for at kopiere">${state.family.join_code}</div>
     <div class="fam-list">${rows}</div>
     <label style="margin-top:16px">Mit navn & farve</label>
-    <div style="display:flex;gap:8px;align-items:center">
-      <input id="me-name" type="text" value="${state.profile?.display_name || ""}" />
-      <select id="me-color" class="color-select">${MEMBER_COLORS.map((c) => `<option value="${c}" ${c === state.profile?.color ? "selected" : ""} style="color:${c}">●●●</option>`).join("")}</select>
-      <button id="me-save" class="ghost-btn">Gem</button>
-    </div>
+    <input id="me-name" type="text" value="${state.profile?.display_name || ""}" style="width:100%" />
+    ${colorSwatchesHtml(state.profile?.color)}
+    <button id="me-save" class="ghost-btn" style="width:100%;margin-top:8px">Gem navn & farve</button>
     <p class="note" style="margin-top:16px"><a href="#" id="fam-leave">Forlad familie</a> · <a href="#" id="fam-signout">Log ud</a></p>`,
     null, "Luk", true, "Luk");
+  wireSwatches();
   $("#joincode").onclick = () => { navigator.clipboard?.writeText(state.family.join_code); toast("Kode kopieret"); };
-  $("#me-save").onclick = () => updateMyProfile($("#me-name").value.trim(), $("#me-color").value);
+  $("#me-save").onclick = () => updateMyProfile($("#me-name").value.trim(), selectedColor());
   $("#fam-leave").onclick = (e) => { e.preventDefault(); leaveFamily(); closeModal(); };
   $("#fam-signout").onclick = (e) => { e.preventDefault(); supabase.auth.signOut(); closeModal(); };
 }

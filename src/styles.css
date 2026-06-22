@@ -223,6 +223,13 @@ body {
 .fam-barwrap { width: 70px; height: 6px; background: var(--line); border-radius: 999px; overflow: hidden; flex-shrink: 0; }
 .fam-bar { display: block; height: 100%; border-radius: 999px; }
 .color-select { width: 70px; }
+.color-swatches { display: flex; gap: 10px; flex-wrap: wrap; margin: 6px 0 2px; }
+.swatch {
+  width: 30px; height: 30px; border-radius: 50%; border: 2px solid #fff; cursor: pointer; padding: 0;
+  box-shadow: 0 0 0 1px var(--line); transition: transform .12s ease, box-shadow .12s ease;
+}
+.swatch:hover { transform: scale(1.08); }
+.swatch.on { box-shadow: 0 0 0 3px var(--ink); transform: scale(1.12); }
 
 /* ---------- Login-gate ---------- */
 .auth-gate {
