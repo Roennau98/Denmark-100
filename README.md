@@ -41,6 +41,29 @@ Når den ligger på en `https://`-adresse, kan du på mobilen vælge *"Føj til 
 
 ---
 
+## Udgiv offentligt med påkrævet login (trin for trin)
+
+Når en backend er sat op (se afsnittet nedenfor), **kræver appen at man logger ind** for at bruge den — ingen betaling, bare en gratis bruger via e-mail-link. Sådan får du den online og let at gen-udgive:
+
+1. **Opret et GitHub-repo** (gratis konto på <https://github.com>) → *New repository* → fx `danmark-100` → *Public*.
+2. **Push koden** (mappen er allerede et git-repo med et commit):
+   ```bash
+   cd danmark-100
+   git remote add origin https://github.com/<dit-brugernavn>/danmark-100.git
+   git push -u origin main
+   ```
+3. **Slå GitHub Pages til:** repoets *Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch: `main` / `/ (root)` → Save.* Efter et øjeblik ligger siden på `https://<dit-brugernavn>.github.io/danmark-100/`.
+4. **Sæt backend op** (se næste afsnit) og indsæt nøglerne i `src/config.js`.
+5. **Vigtigt — tilladte URL'er i Supabase:** under *Authentication → URL Configuration* sæt *Site URL* og tilføj under *Redirect URLs* din Pages-adresse (`https://<dit-brugernavn>.github.io/danmark-100/`). Ellers virker login-linket ikke.
+
+**Gen-udgivelse senere** (når vi får nye idéer): ret koden, og kør:
+```bash
+git add -A && git commit -m "ny funktion" && git push
+```
+GitHub Pages opdaterer siden automatisk. (Den offentlige `anon`-nøgle må gerne ligge i repoet — den er designet til at være offentlig, og sikkerheden ligger i SQL-reglerne.)
+
+---
+
 ## Del med familien / sync mellem enheder (valgfrit)
 
 Uden opsætning gemmes dine afkrydsninger **lokalt i browseren** (kun på din enhed). Slår du Supabase til (gratis), får I to ting:
