@@ -12,5 +12,7 @@
 // Trin-for-trin står i README.md.
 //
 // Lad dem stå tomme for ren lokal lagring.
-export const SUPABASE_URL = "";
-export const SUPABASE_ANON_KEY = "";
+// (SUPABASE_ANON_KEY accepterer både den klassiske "anon public"-nøgle og den
+//  nyere "publishable key" — begge er offentlige og trygge at have her.)
+export const SUPABASE_URL = "https://giytgwkcpnqmgznmsohs.supabase.co";
+export const SUPABASE_ANON_KEY = "sb_publishable_1qEBl5eb2vlK2O2dbf8Blg_MiyO-c78";

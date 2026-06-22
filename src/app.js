@@ -125,9 +125,12 @@ function genCode() {
   return s;
 }
 
-// Login er PÅKRÆVET når en backend er sat op (offentlig udgave). Uden backend
-// (lokal udvikling) kører appen frit, så vi nemt kan arbejde videre.
-function requireAuth() { return !!(SUPABASE_URL && SUPABASE_ANON_KEY); }
+// Login er PÅKRÆVET når en backend er sat op (offentlig udgave). På localhost
+// kører appen frit, så vi nemt kan arbejde videre uden at logge ind hver gang.
+function requireAuth() {
+  const local = ["localhost", "127.0.0.1"].includes(location.hostname);
+  return !local && !!(SUPABASE_URL && SUPABASE_ANON_KEY);
+}
 
 function updateAuthGate() {
   const gate = document.getElementById("auth-gate");
