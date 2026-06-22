@@ -153,7 +153,10 @@ async function doAuth(email, password, mode) {
     return { ok: true };
   }
   const { error } = await supabase.auth.signInWithPassword({ email, password });
-  if (error) return { error: "Forkert e-mail eller kodeord." };
+  if (error) {
+    if (/confirm/i.test(error.message)) return { error: "Brugeren er ikke bekræftet endnu. Slet den i Supabase (Authentication → Users) og opret den igen — nu hvor 'Confirm email' er slået fra." };
+    return { error: "Forkert e-mail eller kodeord." };
+  }
   return { ok: true };
 }
 
