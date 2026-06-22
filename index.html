@@ -132,9 +132,12 @@
       <h2>Danmark · 100 Seværdigheder</h2>
       <p class="auth-sub">Log ind for at samle dine besøgte seværdigheder, planlægge ruter og dele med familien. Gratis — ingen betaling.</p>
       <input id="gate-email" type="email" placeholder="din@email.dk" autocomplete="email" inputmode="email" />
-      <button id="gate-send" class="primary-btn">Send login-link</button>
+      <input id="gate-password" type="password" placeholder="kodeord" autocomplete="current-password" />
+      <p id="gate-pw-hint" class="auth-hint"></p>
+      <button id="gate-submit" class="primary-btn">Log ind</button>
       <p id="gate-msg" class="auth-msg"></p>
-      <p class="auth-fine">Du får et engangs-login-link på mail — intet kodeord. Første gang opretter linket automatisk din bruger.</p>
+      <p id="gate-toggle" class="auth-toggle">Ny her? <a href="#">Opret bruger</a></p>
+      <p class="auth-fine">Vælg selv et kodeord (mindst 6 tegn). Det er gratis at oprette en bruger — ingen betaling.</p>
     </div>
   </div>
 

@@ -138,16 +138,54 @@ function updateAuthGate() {
   gate.classList.toggle("hidden", !(requireAuth() && !user));
 }
 
-async function sendGateLink() {
-  if (!supabase) { toast("Et øjeblik — indlæser…"); return; }
+// Login/oprettelse med e-mail + kodeord (ingen e-mails → ingen rate-limit).
+async function doAuth(email, password, mode) {
+  if (!supabase) return { error: "Indlæser stadig — prøv igen om et øjeblik." };
+  if (!email || !password) return { error: "Udfyld både e-mail og kodeord." };
+  if (mode === "signup" && password.length < 6) return { error: "Kodeordet skal være mindst 6 tegn." };
+  if (mode === "signup") {
+    const { data, error } = await supabase.auth.signUp({ email, password });
+    if (error) {
+      if (/already|registered|exists/i.test(error.message)) return { error: "Den e-mail har allerede en bruger — log ind i stedet.", switchToLogin: true };
+      return { error: error.message };
+    }
+    if (!data.session) return { error: "Bruger oprettet, men e-mail-bekræftelse er slået til i Supabase. Slå 'Confirm email' fra." };
+    return { ok: true };
+  }
+  const { error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error) return { error: "Forkert e-mail eller kodeord." };
+  return { ok: true };
+}
+
+let gateMode = "login";
+function setGateMode(mode) {
+  gateMode = mode;
+  const submit = document.getElementById("gate-submit");
+  const toggle = document.getElementById("gate-toggle");
+  const hint = document.getElementById("gate-pw-hint");
+  if (submit) submit.textContent = mode === "signup" ? "Opret bruger" : "Log ind";
+  if (toggle) toggle.innerHTML = mode === "signup"
+    ? "Har du allerede en bruger? <a href='#'>Log ind</a>"
+    : "Ny her? <a href='#'>Opret bruger</a>";
+  if (hint) hint.textContent = mode === "signup" ? "Vælg et kodeord på mindst 6 tegn." : "";
+  const msg = document.getElementById("gate-msg");
+  if (msg) msg.textContent = "";
+  const pw = document.getElementById("gate-password");
+  if (pw) pw.setAttribute("autocomplete", mode === "signup" ? "new-password" : "current-password");
+}
+
+async function gateSubmit() {
   const email = ($("#gate-email").value || "").trim();
-  if (!email) { $("#gate-msg").textContent = "Skriv din e-mail først."; return; }
-  $("#gate-send").disabled = true;
-  const { error } = await supabase.auth.signInWithOtp({ email, options: { emailRedirectTo: location.href } });
-  $("#gate-send").disabled = false;
-  $("#gate-msg").textContent = error
-    ? "Fejl: " + error.message
-    : "📧 Tjek din mail — vi har sendt et login-link til " + email + ".";
+  const password = $("#gate-password").value || "";
+  $("#gate-msg").textContent = "";
+  $("#gate-submit").disabled = true;
+  const res = await doAuth(email, password, gateMode);
+  $("#gate-submit").disabled = false;
+  if (res.error) {
+    $("#gate-msg").textContent = res.error;
+    if (res.switchToLogin) setGateMode("login");
+  }
+  // ved succes skjuler onAuthStateChange automatisk login-skærmen
 }
 
 async function initSupabase() {
@@ -343,14 +381,19 @@ function openFamilyModal() {
   if (!user) {
     openModal("Log ind", `
       <label>E-mail</label>
-      <input id="login-email" type="email" placeholder="dig@eksempel.dk" />
-      <p class="note">Du får et login-link på mail (intet kodeord). Klik linket, så er du logget ind.</p>`,
-      async () => {
-        const email = $("#login-email").value.trim();
-        if (!email) return false;
-        const { error } = await supabase.auth.signInWithOtp({ email, options: { emailRedirectTo: location.href } });
-        toast(error ? "Fejl: " + error.message : "📧 Tjek din mail for login-link");
-      }, "Send login-link");
+      <input id="fl-email" type="email" placeholder="din@email.dk" />
+      <label>Kodeord</label>
+      <input id="fl-pass" type="password" placeholder="mindst 6 tegn" />
+      <p id="fl-msg" class="note"></p>
+      <button id="fl-login" class="primary-btn" style="width:100%;margin-top:8px">Log ind</button>
+      <p class="note" style="margin-top:10px">Ny her? <a href="#" id="fl-signup">Opret bruger</a></p>`,
+      null, "Luk", true, "Luk");
+    const go = async (mode) => {
+      const r = await doAuth(($("#fl-email").value || "").trim(), $("#fl-pass").value || "", mode);
+      if (r.error) $("#fl-msg").textContent = r.error; else closeModal();
+    };
+    $("#fl-login").onclick = () => go("login");
+    $("#fl-signup").onclick = (e) => { e.preventDefault(); go("signup"); };
     return;
   }
   // 3) logget ind, men ingen familie endnu
@@ -887,8 +930,10 @@ function wireEvents() {
 
   $("#add-place-btn").addEventListener("click", openAddPlace);
   $("#sync-btn").addEventListener("click", onSyncClick);
-  $("#gate-send").addEventListener("click", sendGateLink);
-  $("#gate-email").addEventListener("keydown", (e) => { if (e.key === "Enter") sendGateLink(); });
+  $("#gate-submit").addEventListener("click", gateSubmit);
+  $("#gate-toggle").addEventListener("click", (e) => { e.preventDefault(); setGateMode(gateMode === "login" ? "signup" : "login"); });
+  $("#gate-email").addEventListener("keydown", (e) => { if (e.key === "Enter") $("#gate-password").focus(); });
+  $("#gate-password").addEventListener("keydown", (e) => { if (e.key === "Enter") gateSubmit(); });
   $("#modal-cancel").addEventListener("click", closeModal);
   $("#modal-backdrop").addEventListener("click", (e) => { if (e.target.id === "modal-backdrop") closeModal(); });
 
@@ -920,6 +965,7 @@ async function main() {
   populateRouteSelects();
   updateProgress();
   wireEvents();
+  setGateMode("login");
   updateAuthGate();   // vis login-skærmen med det samme hvis login er påkrævet
   initSupabase();
 

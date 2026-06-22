@@ -82,14 +82,16 @@ Uden opsætning gemmes dine afkrydsninger **lokalt i browseren** (kun på din en
    export const SUPABASE_ANON_KEY = "ey...";
    ```
 
+**Vigtigt — slå e-mail-bekræftelse fra** (så login med kodeord virker uden at sende mails): i Supabase under *Authentication → Sign In / Providers → Email* → slå **"Confirm email" FRA** → Save. Login bruger e-mail + kodeord (ingen e-mails sendes, så ingen rate-limit).
+
 **Sådan bruger familien det:**
 
-1. Tryk **👪 Familie** i appen → log ind med din e-mail (du får et login-link, intet kodeord).
-2. **Opret en familie** og giv den et navn → du får en **6-tegns kode**.
-3. Del koden med familien. De logger ind og vælger **"Deltag med kode"**.
+1. Åbn appen → **opret en bruger** med e-mail + selvvalgt kodeord (eller log ind, hvis man har en) → vælg navn + farve.
+2. Tryk **👪 Familie** → **Opret en familie** og giv den et navn → du får en **6-tegns kode**.
+3. Del koden med familien. De opretter sig og vælger **"Deltag med kode"**.
 4. Alle krydser deres egne steder af. På kortet/​listen vises de andres initialer ved de steder, de har besøgt, og under **👪 Familie** ser I hver persons tæller.
 
-> Tip: tilføj din hostede URL under *Authentication → URL Configuration → Redirect URLs* i Supabase, så login-linket sender folk tilbage til appen. Mangler en kollega at se opdateringer med det samme, kan de genindlæse siden (live-opdatering kræver linjen `alter publication … add table visits;`, som allerede er med i SQL-filen).
+> Live-opdatering når andre krydser af kræver linjen `alter publication … add table visits;` (allerede med i SQL-filen); ellers genindlæser man bare siden. Da login bruger kodeord, er Supabase *Redirect URLs* ikke nødvendige.
 
 ---
 
