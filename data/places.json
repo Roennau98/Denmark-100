@@ -1,0 +1,902 @@
+[
+  {
+    "id": "aalborgtaarnet",
+    "name": "Aalborgtårnet",
+    "region": "Aalborg, Jylland",
+    "category": "taarn",
+    "lat": 57.041805,
+    "lng": 9.904463,
+    "needsReview": false
+  },
+  {
+    "id": "aarhus-raadhus",
+    "name": "Aarhus Rådhus",
+    "region": "Aarhus, Jylland",
+    "category": "sevaerdighed",
+    "lat": 56.152164,
+    "lng": 10.20299,
+    "needsReview": false
+  },
+  {
+    "id": "amalienborg",
+    "name": "Amalienborg",
+    "region": "København, Sjælland",
+    "category": "slot",
+    "lat": 55.68396,
+    "lng": 12.593078,
+    "needsReview": false
+  },
+  {
+    "id": "anholt-fyr",
+    "name": "Anholt Fyr",
+    "region": "Anholt, Jylland",
+    "category": "taarn",
+    "lat": 56.737429,
+    "lng": 11.650402,
+    "needsReview": false
+  },
+  {
+    "id": "arken-museum",
+    "name": "Arken Museum",
+    "region": "Ishøj, Sjælland",
+    "category": "museum",
+    "lat": 55.61163,
+    "lng": 12.307,
+    "needsReview": false
+  },
+  {
+    "id": "aros-kunstmuseum",
+    "name": "ARoS Kunstmuseum",
+    "region": "Aarhus, Jylland",
+    "category": "museum",
+    "lat": 56.153888,
+    "lng": 10.199605,
+    "needsReview": false
+  },
+  {
+    "id": "bakken",
+    "name": "Bakken",
+    "region": "Klampenborg, Sjælland",
+    "category": "forlystelse",
+    "lat": 55.774702,
+    "lng": 12.578017,
+    "needsReview": false
+  },
+  {
+    "id": "bispehuen",
+    "name": "Bispehuen",
+    "region": "Fur, Jylland",
+    "category": "natur",
+    "lat": 56.835,
+    "lng": 9.04,
+    "needsReview": false
+  },
+  {
+    "id": "botanisk-have",
+    "name": "Botanisk Have",
+    "region": "København, Sjælland",
+    "category": "natur",
+    "lat": 55.686909,
+    "lng": 12.573983,
+    "needsReview": false
+  },
+  {
+    "id": "bulbjerg",
+    "name": "Bulbjerg",
+    "region": "Thy, Jylland",
+    "category": "natur",
+    "lat": 57.158414,
+    "lng": 9.024924,
+    "needsReview": false
+  },
+  {
+    "id": "bunkermuseum-hanstholm",
+    "name": "Bunkermuseum Hanstholm",
+    "region": "Hanstholm, Jylland",
+    "category": "museum",
+    "lat": 57.1187,
+    "lng": 8.6036,
+    "needsReview": false
+  },
+  {
+    "id": "christiania",
+    "name": "Christiania",
+    "region": "København, Sjælland",
+    "category": "sevaerdighed",
+    "lat": 55.677211,
+    "lng": 12.610452,
+    "needsReview": false
+  },
+  {
+    "id": "christiansborg-slot",
+    "name": "Christiansborg Slot",
+    "region": "København, Sjælland",
+    "category": "slot",
+    "lat": 55.675651,
+    "lng": 12.580041,
+    "needsReview": false
+  },
+  {
+    "id": "de-6-glemte-kaemper",
+    "name": "De 6 Glemte Kæmper",
+    "region": "Vestegnen, Sjælland",
+    "category": "sevaerdighed",
+    "lat": 55.63,
+    "lng": 12.38,
+    "needsReview": false
+  },
+  {
+    "id": "den-fynske-landsby",
+    "name": "Den Fynske Landsby",
+    "region": "Odense, Fyn",
+    "category": "museum",
+    "lat": 55.365397,
+    "lng": 10.38422,
+    "needsReview": false
+  },
+  {
+    "id": "den-gamle-by",
+    "name": "Den Gamle By",
+    "region": "Aarhus, Jylland",
+    "category": "museum",
+    "lat": 56.158963,
+    "lng": 10.191522,
+    "needsReview": false
+  },
+  {
+    "id": "den-gamle-lillebaeltsbro",
+    "name": "Den Gamle Lillebæltsbro",
+    "region": "Middelfart, Jylland",
+    "category": "sevaerdighed",
+    "lat": 55.517522,
+    "lng": 9.709697,
+    "needsReview": false
+  },
+  {
+    "id": "den-genfundne-bro",
+    "name": "Den Genfundne Bro",
+    "region": "Brædstrup, Jylland",
+    "category": "sevaerdighed",
+    "lat": 55.972903,
+    "lng": 9.689682,
+    "needsReview": false
+  },
+  {
+    "id": "den-lille-havfrue",
+    "name": "Den Lille Havfrue",
+    "region": "København, Sjælland",
+    "category": "sevaerdighed",
+    "lat": 55.692866,
+    "lng": 12.59929,
+    "needsReview": false
+  },
+  {
+    "id": "den-tilsandede-kirke",
+    "name": "Den Tilsandede Kirke",
+    "region": "Skagen, Jylland",
+    "category": "kirke",
+    "lat": 57.713636,
+    "lng": 10.550559,
+    "needsReview": false
+  },
+  {
+    "id": "den-uendelige-bro",
+    "name": "Den Uendelige Bro",
+    "region": "Aarhus, Jylland",
+    "category": "sevaerdighed",
+    "lat": 56.124684,
+    "lng": 10.218306,
+    "needsReview": false
+  },
+  {
+    "id": "det-gamle-raadhus",
+    "name": "Det Gamle Rådhus",
+    "region": "Ribe, Jylland",
+    "category": "sevaerdighed",
+    "lat": 55.327731,
+    "lng": 8.76268,
+    "needsReview": false
+  },
+  {
+    "id": "det-kongelige-teater",
+    "name": "Det Kongelige Teater",
+    "region": "København, Sjælland",
+    "category": "sevaerdighed",
+    "lat": 55.67975,
+    "lng": 12.5856,
+    "needsReview": false
+  },
+  {
+    "id": "dodekalitten",
+    "name": "Dodekalitten",
+    "region": "Lolland",
+    "category": "sevaerdighed",
+    "lat": 54.906631,
+    "lng": 11.356606,
+    "needsReview": false
+  },
+  {
+    "id": "dueodde-strand",
+    "name": "Dueodde Strand",
+    "region": "Bornholm",
+    "category": "strand",
+    "lat": 54.990276,
+    "lng": 15.075992,
+    "needsReview": false
+  },
+  {
+    "id": "dybboel-moelle",
+    "name": "Dybbøl Mølle",
+    "region": "Sønderborg, Jylland",
+    "category": "sevaerdighed",
+    "lat": 54.906918,
+    "lng": 9.757996,
+    "needsReview": false
+  },
+  {
+    "id": "egeskov-slot",
+    "name": "Egeskov Slot",
+    "region": "Kværndrup, Fyn",
+    "category": "slot",
+    "lat": 55.176191,
+    "lng": 10.490154,
+    "needsReview": false
+  },
+  {
+    "id": "ejer-bavnehoej",
+    "name": "Ejer Bavnehøj",
+    "region": "Skanderborg, Jylland",
+    "category": "natur",
+    "lat": 55.977057,
+    "lng": 9.830661,
+    "needsReview": false
+  },
+  {
+    "id": "ekkodalen",
+    "name": "Ekkodalen",
+    "region": "Bornholm",
+    "category": "natur",
+    "lat": 55.107491,
+    "lng": 14.898715,
+    "needsReview": false
+  },
+  {
+    "id": "faxe-kalkbrud",
+    "name": "Faxe Kalkbrud",
+    "region": "Faxe, Sjælland",
+    "category": "natur",
+    "lat": 55.261328,
+    "lng": 12.12882,
+    "needsReview": false
+  },
+  {
+    "id": "fjordenhus",
+    "name": "Fjordenhus",
+    "region": "Vejle, Jylland",
+    "category": "sevaerdighed",
+    "lat": 55.705833,
+    "lng": 9.554992,
+    "needsReview": false
+  },
+  {
+    "id": "fredericia-vold",
+    "name": "Fredericia Vold",
+    "region": "Fredericia, Jylland",
+    "category": "sevaerdighed",
+    "lat": 55.568476,
+    "lng": 9.752745,
+    "needsReview": false
+  },
+  {
+    "id": "frederiksborg-slot",
+    "name": "Frederiksborg Slot",
+    "region": "Hillerød, Sjælland",
+    "category": "slot",
+    "lat": 55.927745,
+    "lng": 12.310855,
+    "needsReview": false
+  },
+  {
+    "id": "fregatten-jylland",
+    "name": "Fregatten Jylland",
+    "region": "Ebeltoft, Jylland",
+    "category": "museum",
+    "lat": 56.199195,
+    "lng": 10.673803,
+    "needsReview": false
+  },
+  {
+    "id": "fyns-hoved",
+    "name": "Fyns Hoved",
+    "region": "Fyn",
+    "category": "natur",
+    "lat": 55.615811,
+    "lng": 10.591516,
+    "needsReview": false
+  },
+  {
+    "id": "faengslet",
+    "name": "Fængslet",
+    "region": "Horsens, Jylland",
+    "category": "museum",
+    "lat": 55.875138,
+    "lng": 9.835358,
+    "needsReview": false
+  },
+  {
+    "id": "gedser-odde",
+    "name": "Gedser Odde",
+    "region": "Falster",
+    "category": "natur",
+    "lat": 54.559152,
+    "lng": 11.969976,
+    "needsReview": false
+  },
+  {
+    "id": "glyptoteket",
+    "name": "Glyptoteket",
+    "region": "København, Sjælland",
+    "category": "museum",
+    "lat": 55.672534,
+    "lng": 12.571766,
+    "needsReview": false
+  },
+  {
+    "id": "grenen",
+    "name": "Grenen",
+    "region": "Skagen, Jylland",
+    "category": "natur",
+    "lat": 57.746238,
+    "lng": 10.650172,
+    "needsReview": false
+  },
+  {
+    "id": "grundtvigs-kirke",
+    "name": "Grundtvigs Kirke",
+    "region": "København, Sjælland",
+    "category": "kirke",
+    "lat": 55.716591,
+    "lng": 12.533864,
+    "needsReview": false
+  },
+  {
+    "id": "h-c-andersens-barndomshjem",
+    "name": "H.C. Andersens Barndomshjem",
+    "region": "Odense, Fyn",
+    "category": "museum",
+    "lat": 55.394528,
+    "lng": 10.387267,
+    "needsReview": false
+  },
+  {
+    "id": "h-c-andersens-hus",
+    "name": "H.C. Andersens Hus",
+    "region": "Odense, Fyn",
+    "category": "museum",
+    "lat": 55.398726,
+    "lng": 10.390772,
+    "needsReview": false
+  },
+  {
+    "id": "hammershus",
+    "name": "Hammershus",
+    "region": "Bornholm",
+    "category": "slot",
+    "lat": 55.270911,
+    "lng": 14.75519,
+    "needsReview": false
+  },
+  {
+    "id": "helligdomsklipperne",
+    "name": "Helligdomsklipperne",
+    "region": "Bornholm",
+    "category": "natur",
+    "lat": 55.22511,
+    "lng": 14.897376,
+    "needsReview": false
+  },
+  {
+    "id": "himmelbjergtaarnet",
+    "name": "Himmelbjergtårnet",
+    "region": "Ry, Jylland",
+    "category": "natur",
+    "lat": 56.105206,
+    "lng": 9.685083,
+    "needsReview": false
+  },
+  {
+    "id": "jellingstenene",
+    "name": "Jellingstenene",
+    "region": "Jelling, Jylland",
+    "category": "sevaerdighed",
+    "lat": 55.756569,
+    "lng": 9.419598,
+    "needsReview": false
+  },
+  {
+    "id": "jernbanemuseet",
+    "name": "Jernbanemuseet",
+    "region": "Odense, Fyn",
+    "category": "museum",
+    "lat": 55.402811,
+    "lng": 10.386442,
+    "needsReview": false
+  },
+  {
+    "id": "jomfru-ane-gade",
+    "name": "Jomfru Ane Gade",
+    "region": "Aalborg, Jylland",
+    "category": "sevaerdighed",
+    "lat": 57.05012,
+    "lng": 9.918888,
+    "needsReview": false
+  },
+  {
+    "id": "jaegersborg-dyrehave",
+    "name": "Jægersborg Dyrehave",
+    "region": "Klampenborg, Sjælland",
+    "category": "natur",
+    "lat": 55.794169,
+    "lng": 12.566478,
+    "needsReview": false
+  },
+  {
+    "id": "kaloe-slotsruin",
+    "name": "Kalø Slotsruin",
+    "region": "Djursland, Jylland",
+    "category": "slot",
+    "lat": 56.274586,
+    "lng": 10.4668,
+    "needsReview": false
+  },
+  {
+    "id": "kastellet",
+    "name": "Kastellet",
+    "region": "København, Sjælland",
+    "category": "sevaerdighed",
+    "lat": 55.691383,
+    "lng": 12.593745,
+    "needsReview": false
+  },
+  {
+    "id": "klitmoeller-strand",
+    "name": "Klitmøller Strand",
+    "region": "Thy, Jylland",
+    "category": "strand",
+    "lat": 57.040154,
+    "lng": 8.498506,
+    "needsReview": false
+  },
+  {
+    "id": "koldinghus",
+    "name": "Koldinghus",
+    "region": "Kolding, Jylland",
+    "category": "slot",
+    "lat": 55.491439,
+    "lng": 9.474745,
+    "needsReview": false
+  },
+  {
+    "id": "kronborg-slot",
+    "name": "Kronborg Slot",
+    "region": "Helsingør, Sjælland",
+    "category": "slot",
+    "lat": 56.039052,
+    "lng": 12.621207,
+    "needsReview": false
+  },
+  {
+    "id": "legoland",
+    "name": "Legoland",
+    "region": "Billund, Jylland",
+    "category": "forlystelse",
+    "lat": 55.735931,
+    "lng": 9.126759,
+    "needsReview": false
+  },
+  {
+    "id": "lille-vildmose",
+    "name": "Lille Vildmose",
+    "region": "Himmerland, Jylland",
+    "category": "natur",
+    "lat": 56.881757,
+    "lng": 10.213801,
+    "needsReview": false
+  },
+  {
+    "id": "louisiana-museum",
+    "name": "Louisiana Museum",
+    "region": "Humlebæk, Sjælland",
+    "category": "museum",
+    "lat": 55.969352,
+    "lng": 12.543157,
+    "needsReview": false
+  },
+  {
+    "id": "laesoe-saltsyderi",
+    "name": "Læsø Saltsyderi",
+    "region": "Læsø, Jylland",
+    "category": "sevaerdighed",
+    "lat": 57.239507,
+    "lng": 10.990678,
+    "needsReview": false
+  },
+  {
+    "id": "loekken-strand",
+    "name": "Løkken Strand",
+    "region": "Løkken, Jylland",
+    "category": "strand",
+    "lat": 57.370486,
+    "lng": 9.71125,
+    "needsReview": false
+  },
+  {
+    "id": "maribo-domkirke",
+    "name": "Maribo Domkirke",
+    "region": "Maribo, Lolland",
+    "category": "kirke",
+    "lat": 54.772609,
+    "lng": 11.499753,
+    "needsReview": false
+  },
+  {
+    "id": "marmorkirken",
+    "name": "Marmorkirken",
+    "region": "København, Sjælland",
+    "category": "kirke",
+    "lat": 55.684974,
+    "lng": 12.589552,
+    "needsReview": false
+  },
+  {
+    "id": "mennesket-ved-havet",
+    "name": "Mennesket ved Havet",
+    "region": "Esbjerg, Jylland",
+    "category": "sevaerdighed",
+    "lat": 55.5302,
+    "lng": 8.4003,
+    "needsReview": false
+  },
+  {
+    "id": "moesgaard-museum",
+    "name": "Moesgaard Museum",
+    "region": "Aarhus, Jylland",
+    "category": "museum",
+    "lat": 56.086355,
+    "lng": 10.222522,
+    "needsReview": false
+  },
+  {
+    "id": "mols-bjerge",
+    "name": "Mols Bjerge",
+    "region": "Djursland, Jylland",
+    "category": "natur",
+    "lat": 56.226615,
+    "lng": 10.556584,
+    "needsReview": false
+  },
+  {
+    "id": "muldyrbunkerne",
+    "name": "Muldyrbunkerne",
+    "region": "Blåvand, Jylland",
+    "category": "sevaerdighed",
+    "lat": 55.553,
+    "lng": 8.081,
+    "needsReview": false
+  },
+  {
+    "id": "museet-for-soefart",
+    "name": "Museet for Søfart",
+    "region": "Helsingør, Sjælland",
+    "category": "museum",
+    "lat": 56.038937,
+    "lng": 12.616268,
+    "needsReview": false
+  },
+  {
+    "id": "moens-klint",
+    "name": "Møns Klint",
+    "region": "Møn, Sjælland",
+    "category": "natur",
+    "lat": 54.988905,
+    "lng": 12.536263,
+    "needsReview": false
+  },
+  {
+    "id": "moensted-kalkgruber",
+    "name": "Mønsted Kalkgruber",
+    "region": "Mønsted, Jylland",
+    "category": "natur",
+    "lat": 56.455058,
+    "lng": 9.168845,
+    "needsReview": false
+  },
+  {
+    "id": "nationalmuseet",
+    "name": "Nationalmuseet",
+    "region": "København, Sjælland",
+    "category": "museum",
+    "lat": 55.67471,
+    "lng": 12.574355,
+    "needsReview": false
+  },
+  {
+    "id": "nationalpark-vadehavet",
+    "name": "Nationalpark Vadehavet",
+    "region": "Jylland",
+    "category": "natur",
+    "lat": 55.18866,
+    "lng": 8.500017,
+    "needsReview": false
+  },
+  {
+    "id": "nyboder",
+    "name": "Nyboder",
+    "region": "København, Sjælland",
+    "category": "sevaerdighed",
+    "lat": 55.689203,
+    "lng": 12.586763,
+    "needsReview": false
+  },
+  {
+    "id": "nyborg-slot",
+    "name": "Nyborg Slot",
+    "region": "Nyborg, Fyn",
+    "category": "slot",
+    "lat": 55.312718,
+    "lng": 10.786763,
+    "needsReview": false
+  },
+  {
+    "id": "nyhavn",
+    "name": "Nyhavn",
+    "region": "København, Sjælland",
+    "category": "sevaerdighed",
+    "lat": 55.679736,
+    "lng": 12.590886,
+    "needsReview": false
+  },
+  {
+    "id": "opalsoeen",
+    "name": "Opalsøen",
+    "region": "Bornholm",
+    "category": "natur",
+    "lat": 55.282792,
+    "lng": 14.761007,
+    "needsReview": false
+  },
+  {
+    "id": "operaen",
+    "name": "Operaen",
+    "region": "København, Sjælland",
+    "category": "sevaerdighed",
+    "lat": 55.681988,
+    "lng": 12.60074,
+    "needsReview": false
+  },
+  {
+    "id": "ribe-domkirke",
+    "name": "Ribe Domkirke",
+    "region": "Ribe, Jylland",
+    "category": "kirke",
+    "lat": 55.328066,
+    "lng": 8.761473,
+    "needsReview": false
+  },
+  {
+    "id": "rold-skov",
+    "name": "Rold Skov",
+    "region": "Himmerland, Jylland",
+    "category": "natur",
+    "lat": 56.803775,
+    "lng": 9.783212,
+    "needsReview": false
+  },
+  {
+    "id": "rosenborg-slot",
+    "name": "Rosenborg Slot",
+    "region": "København, Sjælland",
+    "category": "slot",
+    "lat": 55.685693,
+    "lng": 12.57742,
+    "needsReview": false
+  },
+  {
+    "id": "rubjerg-knude-fyr",
+    "name": "Rubjerg Knude Fyr",
+    "region": "Lønstrup, Jylland",
+    "category": "taarn",
+    "lat": 57.449049,
+    "lng": 9.775488,
+    "needsReview": false
+  },
+  {
+    "id": "rundetaarn",
+    "name": "Rundetårn",
+    "region": "København, Sjælland",
+    "category": "taarn",
+    "lat": 55.681358,
+    "lng": 12.575794,
+    "needsReview": false
+  },
+  {
+    "id": "raabjerg-mile",
+    "name": "Råbjerg Mile",
+    "region": "Skagen, Jylland",
+    "category": "natur",
+    "lat": 57.647806,
+    "lng": 10.409611,
+    "needsReview": false
+  },
+  {
+    "id": "roesnaes-fyr",
+    "name": "Røsnæs Fyr",
+    "region": "Kalundborg, Sjælland",
+    "category": "taarn",
+    "lat": 55.743473,
+    "lng": 10.869161,
+    "needsReview": false
+  },
+  {
+    "id": "skjoldungernes-land",
+    "name": "Skjoldungernes Land",
+    "region": "Roskilde, Sjælland",
+    "category": "natur",
+    "lat": 55.65301,
+    "lng": 12.003782,
+    "needsReview": false
+  },
+  {
+    "id": "skovtaarnet",
+    "name": "Skovtårnet",
+    "region": "Haslev, Sjælland",
+    "category": "taarn",
+    "lat": 55.253169,
+    "lng": 11.97701,
+    "needsReview": false
+  },
+  {
+    "id": "skulpturparken-blokhus",
+    "name": "Skulpturparken Blokhus",
+    "region": "Blokhus, Jylland",
+    "category": "sevaerdighed",
+    "lat": 57.252,
+    "lng": 9.583,
+    "needsReview": false
+  },
+  {
+    "id": "sneglehuset",
+    "name": "Sneglehuset",
+    "region": "Thyborøn, Jylland",
+    "category": "sevaerdighed",
+    "lat": 56.69627,
+    "lng": 8.200647,
+    "needsReview": false
+  },
+  {
+    "id": "spoettrup-borg",
+    "name": "Spøttrup Borg",
+    "region": "Salling, Jylland",
+    "category": "slot",
+    "lat": 56.638408,
+    "lng": 8.786145,
+    "needsReview": false
+  },
+  {
+    "id": "stevns-klint",
+    "name": "Stevns Klint",
+    "region": "Stevns, Sjælland",
+    "category": "natur",
+    "lat": 55.323142,
+    "lng": 12.448232,
+    "needsReview": false
+  },
+  {
+    "id": "store-taarn",
+    "name": "Store Tårn",
+    "region": "Christiansø, Bornholm",
+    "category": "taarn",
+    "lat": 55.320647,
+    "lng": 15.186938,
+    "needsReview": false
+  },
+  {
+    "id": "storebaeltsbroen",
+    "name": "Storebæltsbroen",
+    "region": "Sjælland/Fyn",
+    "category": "sevaerdighed",
+    "lat": 55.339592,
+    "lng": 10.995426,
+    "needsReview": false
+  },
+  {
+    "id": "svanninge-bakker",
+    "name": "Svanninge Bakker",
+    "region": "Fyn",
+    "category": "natur",
+    "lat": 55.127039,
+    "lng": 10.249882,
+    "needsReview": false
+  },
+  {
+    "id": "tirpitz",
+    "name": "Tirpitz",
+    "region": "Blåvand, Jylland",
+    "category": "museum",
+    "lat": 55.5562,
+    "lng": 8.0892,
+    "needsReview": false
+  },
+  {
+    "id": "tivoli",
+    "name": "Tivoli",
+    "region": "København, Sjælland",
+    "category": "forlystelse",
+    "lat": 55.673427,
+    "lng": 12.569189,
+    "needsReview": false
+  },
+  {
+    "id": "tystrup-bavelse",
+    "name": "Tystrup-Bavelse",
+    "region": "Sjælland",
+    "category": "natur",
+    "lat": 55.355108,
+    "lng": 11.591229,
+    "needsReview": false
+  },
+  {
+    "id": "valdemars-slot",
+    "name": "Valdemars Slot",
+    "region": "Tåsinge, Fyn",
+    "category": "slot",
+    "lat": 55.022,
+    "lng": 10.616,
+    "needsReview": false
+  },
+  {
+    "id": "vikingeskibsmuseet",
+    "name": "Vikingeskibsmuseet",
+    "region": "Roskilde, Sjælland",
+    "category": "museum",
+    "lat": 55.65087,
+    "lng": 12.081472,
+    "needsReview": false
+  },
+  {
+    "id": "vor-frelsers-kirke",
+    "name": "Vor Frelsers Kirke",
+    "region": "København, Sjælland",
+    "category": "kirke",
+    "lat": 55.672908,
+    "lng": 12.594252,
+    "needsReview": false
+  },
+  {
+    "id": "vor-frue-kirke",
+    "name": "Vor Frue Kirke",
+    "region": "Kalundborg, Sjælland",
+    "category": "kirke",
+    "lat": 55.680465,
+    "lng": 11.080863,
+    "needsReview": false
+  },
+  {
+    "id": "aebeloe",
+    "name": "Æbelø",
+    "region": "Fyn",
+    "category": "natur",
+    "lat": 55.635748,
+    "lng": 10.178481,
+    "needsReview": false
+  },
+  {
+    "id": "oesterlars-rundkirke",
+    "name": "Østerlars Rundkirke",
+    "region": "Bornholm",
+    "category": "kirke",
+    "lat": 55.171478,
+    "lng": 14.961688,
+    "needsReview": false
+  }
+]

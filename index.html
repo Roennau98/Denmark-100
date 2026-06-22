@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#c8102e" />
+  <title>Danmark · 100 Seværdigheder</title>
+  <meta name="description" content="Interaktivt kort over danske seværdigheder. Kryds af hvor du har været, planlæg ruter og find spændende steder i nærheden." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/icon.svg" />
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+  <link rel="stylesheet" href="src/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="topbar">
+      <button id="menu-toggle" class="icon-btn menu-toggle" aria-label="Vis/skjul menu">☰</button>
+      <div class="brand">
+        <span class="brand-flag" aria-hidden="true"></span>
+        <div class="brand-text">
+          <h1>Danmark</h1>
+          <p>100 seværdigheder</p>
+        </div>
+      </div>
+      <div class="progress-wrap" title="Hvor mange du har besøgt">
+        <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+        <span id="progress-label" class="progress-label">0 / 0</span>
+      </div>
+      <div class="topbar-actions">
+        <button id="sync-btn" class="ghost-btn" title="Del med familien">👪 Familie</button>
+      </div>
+    </header>
+
+    <div class="main">
+      <!-- Sidebar -->
+      <aside id="sidebar" class="sidebar">
+        <nav class="tabs">
+          <button class="tab active" data-tab="places">📍 Steder</button>
+          <button class="tab" data-tab="route">🧭 Rute</button>
+          <button class="tab" data-tab="nearby">🍽️ I nærheden</button>
+        </nav>
+
+        <!-- PLACES TAB -->
+        <section class="tab-panel active" data-panel="places">
+          <div class="panel-controls">
+            <input id="search" class="search-input" type="search" placeholder="Søg seværdighed…" />
+            <div class="filter-row">
+              <select id="region-filter" class="mini-select"><option value="">Alle landsdele</option></select>
+              <select id="status-filter" class="mini-select">
+                <option value="all">Alle</option>
+                <option value="todo">Mangler</option>
+                <option value="done">Besøgt</option>
+              </select>
+            </div>
+            <div id="category-chips" class="chips"></div>
+          </div>
+          <div id="place-list" class="place-list"></div>
+          <div class="panel-footer">
+            <button id="add-place-btn" class="link-btn">＋ Tilføj eget sted</button>
+          </div>
+        </section>
+
+        <!-- ROUTE TAB -->
+        <section class="tab-panel" data-panel="route">
+          <div class="route-builder">
+            <p class="hint">Vælg start og slut. Tilføj evt. stop undervejs. Du kan også klikke <b>＋ på et sted</b> i listen eller på kortet.</p>
+            <div class="route-field">
+              <label>Start</label>
+              <select id="route-start" class="full-select"></select>
+            </div>
+            <div id="route-waypoints"></div>
+            <div class="route-field">
+              <label>Slut</label>
+              <select id="route-end" class="full-select"></select>
+            </div>
+            <button id="add-waypoint" class="link-btn">＋ Tilføj stop</button>
+            <div class="route-actions">
+              <button id="calc-route" class="primary-btn">Beregn rute</button>
+              <button id="optimize-route" class="ghost-btn" title="Find den korteste rækkefølge af stoppene">Optimér</button>
+              <button id="clear-route" class="ghost-btn">Ryd</button>
+            </div>
+            <div id="route-summary" class="route-summary"></div>
+            <div id="route-steps" class="route-steps"></div>
+          </div>
+        </section>
+
+        <!-- NEARBY TAB -->
+        <section class="tab-panel" data-panel="nearby">
+          <div class="nearby-builder">
+            <p class="hint">Find seværdigheder og madsteder omkring et punkt.</p>
+            <div class="route-field">
+              <label>Centrum</label>
+              <select id="nearby-center" class="full-select">
+                <option value="map">📍 Kortets midte</option>
+                <option value="me">🛰️ Min placering</option>
+              </select>
+            </div>
+            <div class="route-field">
+              <label>Radius: <span id="radius-label">3 km</span></label>
+              <input id="radius" type="range" min="1" max="15" value="3" step="1" />
+            </div>
+            <div id="nearby-types" class="chips">
+              <button class="chip active" data-type="attraction">🎯 Seværdigheder</button>
+              <button class="chip active" data-type="restaurant">🍽️ Restauranter</button>
+              <button class="chip active" data-type="cafe">☕ Caféer</button>
+              <button class="chip" data-type="bakery">🥐 Bagere</button>
+              <button class="chip" data-type="bar">🍺 Barer & pubs</button>
+              <button class="chip" data-type="fast_food">🍔 Fast food</button>
+            </div>
+            <button id="find-nearby" class="primary-btn">Find i nærheden</button>
+            <div id="nearby-results" class="nearby-results"></div>
+          </div>
+        </section>
+      </aside>
+
+      <!-- Map -->
+      <div id="map" class="map"></div>
+    </div>
+  </div>
+
+  <!-- Login-gate: vises når man skal være logget ind for at bruge appen -->
+  <div id="auth-gate" class="auth-gate hidden">
+    <div class="auth-card">
+      <img class="auth-logo" src="icons/icon.svg" alt="Danmark 100" width="76" height="76" />
+      <h2>Danmark · 100 Seværdigheder</h2>
+      <p class="auth-sub">Log ind for at samle dine besøgte seværdigheder, planlægge ruter og dele med familien. Gratis — ingen betaling.</p>
+      <input id="gate-email" type="email" placeholder="din@email.dk" autocomplete="email" inputmode="email" />
+      <button id="gate-send" class="primary-btn">Send login-link</button>
+      <p id="gate-msg" class="auth-msg"></p>
+      <p class="auth-fine">Du får et engangs-login-link på mail — intet kodeord. Første gang opretter linket automatisk din bruger.</p>
+    </div>
+  </div>
+
+  <!-- Modal: add place -->
+  <div id="modal-backdrop" class="modal-backdrop hidden">
+    <div class="modal">
+      <h3 id="modal-title">Tilføj sted</h3>
+      <div id="modal-body"></div>
+      <div class="modal-actions">
+        <button id="modal-cancel" class="ghost-btn">Annullér</button>
+        <button id="modal-ok" class="primary-btn">Gem</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

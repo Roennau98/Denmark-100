@@ -1,0 +1,13 @@
+{
+  "name": "Danmark · 100 Seværdigheder",
+  "short_name": "DK 100",
+  "description": "Interaktivt kort over danske seværdigheder med afkrydsning, ruteplanlægning og steder i nærheden.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f8fa",
+  "theme_color": "#c8102e",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

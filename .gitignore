@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# logs / temp
+*.log
+/tmp/
+
+# editor
+.vscode/
+.idea/
+
+# dependencies (ikke brugt, men for en sikkerheds skyld)
+node_modules/
